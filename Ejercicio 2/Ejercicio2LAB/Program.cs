@@ -18,8 +18,11 @@ namespace Ejercicio2LAB
                 Division dividi = new Division(a);
                 dividi.Operacion();
                 Console.WriteLine("Desea intentar de nuevo:(y/n)");
-                opcion = Console.ReadLine(); ;
-            } while (opcion == "y" );
+                opcion = Console.ReadLine();
+                opcion.Siguiente();
+         
+
+            } while (opcion == "n" );
 
             do
             {
@@ -29,7 +32,10 @@ namespace Ejercicio2LAB
                 Division dividi2 = new Division();
                 dividi2.OperacionChuck();
                 Console.WriteLine("Desea intentar de nuevo:(y/n)");
-                opcion = Console.ReadLine(); ;
+                opcion =(Console.ReadLine()) ;
+                opcion.Siguiente();
+
+
             }
             while (opcion != "n");
 
@@ -45,9 +51,11 @@ namespace Ejercicio2LAB
             }
           
             Console.WriteLine("ACT 4)");
-            log.ExcepPerso();
-
-
+            try { log.ExcepPerso(); }
+            catch (ExcepcionPersonalizada e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             Console.ReadKey();
         }

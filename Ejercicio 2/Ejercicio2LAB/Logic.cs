@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio2LAB
 {
-    class Logic : Exception
+    class Logic
     {
         public void Excep()
         {
@@ -15,15 +15,11 @@ namespace Ejercicio2LAB
 
        public  void ExcepPerso()
         {
-            try
-            {
+           
                 throw new ExcepcionPersonalizada();
 
-            }
-            catch (ExcepcionPersonalizada e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            
+        
         }
 
 
