@@ -1,0 +1,38 @@
+﻿@model List<Capa.WEB.Models.Territories>
+
+@{
+    ViewBag.Title = "Territorios";
+}
+
+<h2>@ViewBag.Title.</h2>
+    <div class="jumbotron justify-content-center">
+        <h3 align="center">Lab C# APPWEB</h3>
+        <table class="table table-bordered">
+            <tr><img src="~/Content/img/Add.png" /> Agregar un nuevo Territorio</tr>
+           
+            <thead>
+                <td></td>
+            <td>ID</td>
+            <td>Nombre  </td>
+            <td>Tipo de Region</td>
+            </thead>
+
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="text-align">
+
+                            <img src="~/Content/img/Edit.png" />
+                            <img src="~/Content/img/Remove.png" />
+                        </td>
+                        <td>@item.TerritoryID</td>
+                        <td>@item.TerritoryDescription</td>
+                        <td>@item.RegionID</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>

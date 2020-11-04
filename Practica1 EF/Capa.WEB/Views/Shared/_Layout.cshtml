@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Lab C# APPWEB</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container d-flex justify-content-center">
+            <img src="https://images.vexels.com/media/users/3/208677/isolated/lists/95911e31de748f9c9b91ffe7fbe0d3c0-hojas-frescas-de-acuarela.png" />
+        </div>
+        <div class="container d-flex justify-content-center">
+            <div class="navbar-header">
+                <ul class="nav navbar navbar-collapse">
+                    <li class="px-3">@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="px-3">@Html.ActionLink("Categorias", "About", "Home")</li>
+                    <li class="px-3">@Html.ActionLink("Territorios", "Contact", "Home")</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year Lab C# APPWEB</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
