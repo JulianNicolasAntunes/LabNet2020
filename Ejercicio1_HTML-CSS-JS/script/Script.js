@@ -18,7 +18,11 @@ function enviar(){
     if(apellido.value===null || apellido.value===''){
         msjerror.push('Ingresa apellido');
     }
-    else alert ('Mensaje enviado');
+    
+    if (nombre.value!=null && nombre.value!= '' && apellido.value!= null && apellido.value!=''){ 
+        alert ('Mensaje enviado');
+    }
+
     error.innerHTML= msjerror.join('. ');
     return false;
 }
