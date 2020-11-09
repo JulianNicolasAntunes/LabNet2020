@@ -15,6 +15,14 @@ h4{font-size: 18px; line-height: 1.4em;}
     align-content: center;
 
 }
+#box{  
+    padding-top: 1px;
+    border: 25px solid #1472ca;
+    margin-left: 650px;
+    margin-right: 650px;
+
+
+}
 #error{
     color:#db0a0a;
 }
