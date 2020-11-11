@@ -1,0 +1,20 @@
+﻿@model  EjercicioMVC.Entity.LOCATIONS
+@{
+    ViewBag.Title = "Update Employees";
+}
+
+<h2>Actualizar Employees</h2>
+
+@using (Html.BeginForm("Update", "Location", FormMethod.Post))
+{<div class="container">
+
+
+        <div><h5>ID</h5> @Html.TextBoxFor(r => r.ID)</div>
+        <div><br /><h5>City</h5> @Html.TextBoxFor(r => r.CITY)</div>
+
+
+        <br />
+        <input type="submit" name="Save" value="Save " />
+
+    </div>
+}

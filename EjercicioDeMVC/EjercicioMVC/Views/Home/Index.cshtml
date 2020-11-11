@@ -1,0 +1,138 @@
+﻿@{
+    ViewBag.Title = "iPeople - Home";
+}
+
+<!-- Masthead -->
+<header class="masthead text-white text-center">
+    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+        <img class="img-fluid rounded-circle mb-3" src="@Url.Content("~/Content/img/peoplelogo.png")" alt="">
+
+    </div>
+
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <h1 class="mb-5">iPeople</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Icons Grid -->
+<section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex">
+                        <a class="btn btn-block btn-lg btn-outline-light" href="@Url.Content("~/Employees/Index")"><i class="icon-screen-desktop m-auto text-primary"></i></a>
+                    </div>
+                    <a href="@Url.Content("~/Employees/Index")"><h3>Employees</h3></a> 
+                    <p class="lead mb-0">Search company employees!</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex">
+                        <a class="btn btn-block btn-lg btn-outline-light" href="@Url.Content("~/Departaments/Index ")"><i class="icon-layers m-auto text-primary"></i></a>
+                        
+                    </div>
+                    <a href="@Url.Content("~/Departaments/Index ")"><h3>Departments </h3></a>
+                    <p class="lead mb-0">You can search the departments that the company owns!</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex">
+                        <a class="btn btn-block btn-lg btn-outline-light" href="@Url.Content("~/Location/Index")"><i class="icon-check m-auto text-primary"></i></a>    
+                    </div>
+                    <a href="@Url.Content("~/Location/Index")"><h3>Locations</h3></a>
+                    <p class="lead mb-0">See all company locations!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image Showcases -->
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+
+            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url(@Url.Content("~/Content/img/bg-showcase-1.jpg"));"></div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>We have great work teams</h2>
+                <p class="lead mb-0">Our employees are in some of the best companies to work for in the world!</p>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-lg-6 text-white showcase-img" style="background-image: url(@Url.Content("~/Content/img/bg-showcase-2.jpg"));"></div>
+            <div class="col-lg-6 my-auto showcase-text">
+                <h2>Our apartments are very modern</h2>
+                <p class="lead mb-0">We have many offices. Our departments are equipped with the latest technology and an ideal environment to be able to work relaxed!</p>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url(@Url.Content("~/Content/img/bg-showcase-3.jpg"));"></div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>You can find us in all parts of the world</h2>
+                <p class="lead mb-0">We know that our world is becoming more and more global, that is why we have many locations so that you can find us in each city!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials text-center bg-light">
+    <div class="container">
+        <h2 class="mb-5">Meet some of the employees...</h2>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="@Url.Content("~/Content/img/testimonials-3.jpg")" alt="">
+                    <h5>Nora Feliciano</h5><p>Manager</p>
+                    <p class="font-weight-light mb-0">"She is our sales manager!"</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="@Url.Content("~/Content/img/testimonials-2.jpg")" alt="">
+                    <h5>Jose Michetti</h5><p>Administrative</p>
+                    <p class="font-weight-light mb-0">He is currently in charge of the administration and accounting area.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="@Url.Content("~/Content/img/testimonials-1.jpg")" alt="">
+                    <h5>Cristina Nuncio</h5><p>Operator</p>
+                    <p class="font-weight-light mb-0">She provides phone assistance for our customers!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="call-to-action text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <h2 class="mb-4">Run a general search!</h2>
+            </div>
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                <form>
+                    <div class="form-row">
+                        <div class="col-12 col-md-9 mb-2 mb-md-0">
+                            <input type="text" class="form-control form-control-lg" placeholder="Write what you want to search">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <button type="submit" class="btn btn-block btn-lg btn-primary">Search!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

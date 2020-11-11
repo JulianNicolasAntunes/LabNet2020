@@ -1,0 +1,21 @@
+﻿@model  EjercicioMVC.Entity.LOCATIONS
+@{
+    ViewBag.Title = "Insert Employees";
+}
+
+<h2>Insertar Employees</h2>
+
+
+@using (Html.BeginForm("Insertar", "Location", FormMethod.Post))
+{<div class="container">
+
+
+       
+        <div><br /><h5>City</h5> @Html.TextBoxFor(r => r.CITY, new { required = "required" })</div>
+
+
+        <br />
+        <input type="submit" name="Save" value="Save " />
+
+    </div>
+}

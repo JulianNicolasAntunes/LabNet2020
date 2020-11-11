@@ -1,0 +1,29 @@
+﻿@model  EjercicioMVC.Entity.DEPARTMENTS
+@{
+    ViewBag.Title = "Insert Departments";
+}
+
+<h2>Insertar Departments</h2>
+
+@using (Html.BeginForm("Insert", "Departaments", FormMethod.Post))
+{    <div class="container">
+
+
+
+    <div><br /><h5>Department Name</h5> @Html.TextBoxFor(r => r.DEPARTMENT_NAME)</div>
+    <div><br /><h5>Department Description</h5> @Html.TextBoxFor(r => r.DEPARTMENT_DESCRIPTION)</div>
+    <div>
+        <br /><h5>Location ID<</h5>
+        <select class="col-form-label" @Html.TextBoxFor(r => r.LOCATION_ID)>
+            <option value=""> </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+    
+        </select>
+    </div>
+    <br />
+    <input type="submit" name="Save" value="Save " />
+
+</div>
+    }
