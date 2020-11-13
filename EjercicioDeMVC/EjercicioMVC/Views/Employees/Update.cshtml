@@ -8,12 +8,10 @@
 @using (Html.BeginForm("Update", "Employees", FormMethod.Post))
 {<div class="container">
         <div class="row no-gutters">
-
             <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                 <h2>Update person!</h2>
             </div>
         </div>
-
         <div><h5>First Name</h5> @Html.TextBoxFor(r => r.FIRST_NAME, new { required = "required" })</div>
         <div><br /><h5>Last Name</h5> @Html.TextBoxFor(r => r.LAST_NAME, new { required = "required" })</div>
         <div><br /><h5>Salary</h5> @Html.TextBoxFor(r => r.SALARY, new { required = "required" })</div>
@@ -29,7 +27,6 @@
             <option value="50">50</option>
         </select>
     </div>
-
     <div><br /><h5>Hire date</h5> @Html.TextBoxFor(r => r.HIRE_DATE, "{0:dd-MM-yy}", new { type = "date" })</div>
     <div>
         <br /><h5>Manager ID</h5>
@@ -40,11 +37,8 @@
             <option value="3">3</option>
             <option value="4">4</option>
         </select>
-
-
     </div>
     <br />
     <input class=" col-12 col-md-3 btn btn-block btn-lg btn-outline-success" type="submit" name="Save" value="Save " />
-
     </div>
 }

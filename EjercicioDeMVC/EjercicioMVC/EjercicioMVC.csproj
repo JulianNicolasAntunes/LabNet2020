@@ -261,6 +261,11 @@
     <Content Include="Views\Employees\Update.cshtml" />
     <Content Include="Views\Location\Update.cshtml" />
     <Content Include="Views\Location\Insertar.cshtml" />
+    <Content Include="Views\Home\_Testimonials.cshtml" />
+    <Content Include="Views\Home\_Call.cshtml" />
+    <Content Include="Views\Home\_Opcion.cshtml" />
+    <Content Include="Views\Home\_Selection.cshtml" />
+    <Content Include="Views\Home\_Subhead.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EjercicioMVC.Entity\EjercicioMVC.Entity.csproj">

@@ -9,8 +9,6 @@ namespace EjercicioMVC.Logic
 {
     public class JobsLogic : Logic, ILogic<JOBS>
     {
-     
-
         public void Delete(int entity)
         {
             JOBS deleteJob = GetOne(entity);

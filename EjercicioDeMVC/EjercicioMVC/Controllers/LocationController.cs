@@ -39,7 +39,6 @@ namespace EjercicioMVC.Controllers
             return RedirectToAction("index");
         }
 
-
         [HttpPost]
         public ActionResult Insertar(LOCATIONS loca)
         {

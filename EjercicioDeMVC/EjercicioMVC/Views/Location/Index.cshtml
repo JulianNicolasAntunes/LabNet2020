@@ -10,14 +10,12 @@
 
             <img class="@Url.Content("~/Content/img-fluid rounded-circle mb-3")" src="@Url.Content("~/Content/img/peoplelogo.png")" alt="">
         </div>
-
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-xl-9 mx-auto">
                     <h1 class="mb-5">Locations</h1>
                 </div>
-
                 <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
                     <form>
                         <div class="form-row">
@@ -59,7 +57,7 @@
                     <td>@local.ID</td>
                     <td>@local.CITY</td>
                     <td></td>
-                    <td class=" btn-outline-light">
+                    <td class="btn-outline-light">
                         @Html.ActionLink("Delete", "Delete", new { id = local.ID }, new { onclick = "return confirm('Are you sure you want to remove the selected item from the list?')" })>
                         <br />
                         @Html.ActionLink("Update", "Update", new { id = local.ID }, new { onclick = "return confirm('Are you sure you want to update the selected item from the list?')" })>

@@ -9,8 +9,6 @@ namespace EjercicioMVC.Logic
 {
     public class DepartmentsLogic : Logic, ILogic<DEPARTMENTS>
     {
-  
-
         public void Delete(int entity)
         {
             DEPARTMENTS deleteDepto = GetOne(entity);
@@ -61,6 +59,6 @@ namespace EjercicioMVC.Logic
             editDeparment.DEPARTMENT_DESCRIPTION = entity.DEPARTMENT_DESCRIPTION;
             editDeparment.LOCATION_ID = entity.LOCATION_ID;
             context.SaveChanges();
-        }
+        }   
     }
 }

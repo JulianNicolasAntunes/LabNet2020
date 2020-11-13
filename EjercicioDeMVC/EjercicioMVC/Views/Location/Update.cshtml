@@ -5,19 +5,16 @@
 
 
 @using (Html.BeginForm("Update", "Location", FormMethod.Post))
-{<div class="container">
-
-     <div class="row no-gutters">
-
-         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-             <h2>Update a location!</h2>
-         </div>
-     </div>
-    <div><br /><h5>City</h5> @Html.TextBoxFor(r => r.CITY, new { required = "required" })</div>
-
-
-    <br />
-    <input class=" col-12 col-md-3 btn btn-block btn-lg btn-outline-success" type="submit" name="Save" value="Save " />
-
-</div>
+{<body>
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>Update a location!</h2>
+            </div>
+        </div>
+        <div><br /><h5>City</h5> @Html.TextBoxFor(r => r.CITY, new { required = "required" })</div>
+        <br />
+        <input class=" col-12 col-md-3 btn btn-block btn-lg btn-outline-success" type="submit" name="Save" value="Save " />
+    </div>
+</body>
 }

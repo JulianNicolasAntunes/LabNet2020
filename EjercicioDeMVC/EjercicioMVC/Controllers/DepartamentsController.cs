@@ -19,6 +19,7 @@ namespace EjercicioMVC.Controllers
             return View(deptos);
 
         }
+      
         public ActionResult Insertar()
         {
 

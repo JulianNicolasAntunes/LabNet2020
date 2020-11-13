@@ -9,9 +9,6 @@ namespace EjercicioMVC.Logic
 {
     public class LocationsLogic : Logic, ILogic<LOCATIONS>
     {
-      
-
-
         public void Delete(int entity)
         {
             LOCATIONS deleteLocation = GetOne(entity);
@@ -23,8 +20,6 @@ namespace EjercicioMVC.Logic
         {
             return context.LOCATIONS.ToList();
         }
-
-      
 
         public LOCATIONS GetOne(int id)
         {

@@ -57,7 +57,6 @@ namespace EjercicioMVC.Controllers
         {
             return View();
         }
-    
 
         [HttpPost]
         public ActionResult Insertar (EMPLOYEES emplo)
