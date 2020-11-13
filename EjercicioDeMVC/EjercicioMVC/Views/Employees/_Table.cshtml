@@ -1,0 +1,43 @@
+﻿<div class="btn-light">
+    <br />
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-6 mx-auto">
+                <a class="btn btn-block btn-lg btn-outline-primary" href="@Url.Content("~/Employees/Insertar ")">Insert</a>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table">
+    <tr class="btn-primary">
+        <td></td>
+        <td>ID</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Salary</td>
+        <td>Department ID</td>
+        <td>Job ID</td>
+        <td>Hire date</td>
+        <td>Manager ID</td>
+        <td>Accion</td>
+    </tr>
+    @foreach (var emplo in Model)
+    {
+        <tr class="btn-light">
+            <td></td>
+            <td>@emplo.ID</td>
+            <td>@emplo.FIRST_NAME</td>
+            <td>@emplo.LAST_NAME</td>
+            <td>@emplo.SALARY</td>
+            <td>@emplo.DEPARTMENT_ID</td>
+            <td>@emplo.JOB_ID</td>
+            <td>@emplo.HIRE_DATE</td>
+            <td>@emplo.MANAGER_ID</td>
+            <td class=" btn-outline-light">
+                @Html.ActionLink("Delete", "Delete", new { id = emplo.ID }, new { onclick = "return confirm('Are you sure you want to remove the selected item from the list?')" })>
+                <br />
+                @Html.ActionLink("Update", "Update", new { id = emplo.ID }, new { onclick = "return confirm('Are you sure you want to update the selected item from the list?')" })>
+            </td>
+        </tr>
+    }
+</table>

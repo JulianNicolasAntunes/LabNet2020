@@ -266,6 +266,12 @@
     <Content Include="Views\Home\_Opcion.cshtml" />
     <Content Include="Views\Home\_Selection.cshtml" />
     <Content Include="Views\Home\_Subhead.cshtml" />
+    <Content Include="Views\Employees\_Header.cshtml" />
+    <Content Include="Views\Employees\_Table.cshtml" />
+    <Content Include="Views\Location\_Header.cshtml" />
+    <Content Include="Views\Location\_Table.cshtml" />
+    <Content Include="Views\Departaments\_Table.cshtml" />
+    <Content Include="Views\Departaments\_Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EjercicioMVC.Entity\EjercicioMVC.Entity.csproj">

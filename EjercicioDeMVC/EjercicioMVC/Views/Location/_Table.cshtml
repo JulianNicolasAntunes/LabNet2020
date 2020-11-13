@@ -1,0 +1,36 @@
+﻿<div class="btn-light">
+    <br />
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-6 mx-auto">
+                <a class="btn btn-block btn-lg btn-outline-primary" href="@Url.Content("~/Location/Insertar ")">Insert</a>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table">
+    <tr class="btn-primary">
+        <td></td>
+        <td>ID</td>
+        <td>City</td>
+        <td></td>
+        <td>Accion</td>
+        <td></td>
+    </tr>
+    @foreach (var local in Model)
+    {
+        <tr class="btn-light">
+            <td></td>
+            <td>@local.ID</td>
+            <td>@local.CITY</td>
+            <td></td>
+            <td class="btn-outline-light">
+                @Html.ActionLink("Delete", "Delete", new { id = local.ID }, new { onclick = "return confirm('Are you sure you want to remove the selected item from the list?')" })>
+                <br />
+                @Html.ActionLink("Update", "Update", new { id = local.ID }, new { onclick = "return confirm('Are you sure you want to update the selected item from the list?')" })>
+
+            </td>
+            <td></td>
+        </tr>
+    }
+</table>
