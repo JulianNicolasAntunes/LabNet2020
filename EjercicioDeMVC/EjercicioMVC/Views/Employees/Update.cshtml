@@ -6,16 +6,13 @@
 @using (Html.BeginForm("Update", "Employees", FormMethod.Post))
 {<div class="container">
         <div class="row no-gutters">
-            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2 class="text-info">Update person!</h2>
-            </div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text"><h2 class="text-info">Update person!</h2></div>
         </div>
         <div><h5>First Name</h5> @Html.TextBoxFor(r => r.FIRST_NAME, new { type = "text", minlength = "3",required = "required" })</div>
         <div><br /><h5>Last Name</h5> @Html.TextBoxFor(r => r.LAST_NAME, new { type = "text", minlength = "3",required = "required" })</div>
         <div><br /><h5>Salary</h5> @Html.TextBoxFor(r => r.SALARY, new { type = "number", min = "1", required = "required" })</div>
         <br /><h5>Department</h5>
-    <div>
-        <select class="col-form-label" @Html.TextBoxFor(r => r.DEPARTMENT_ID, new { required = "required" })>
+    <div><select class="col-form-label" @Html.TextBoxFor(r => r.DEPARTMENT_ID, new { required = "required" })>
             <option value=""> </option>
             <optgroup label="Select an ID">
                 <option value="10">10</option>
@@ -30,13 +27,15 @@
     <div><br /><h5>Hire date</h5> @Html.TextBoxFor(r => r.HIRE_DATE, "{0:dd-MM-YY}", new { type = "date" })</div>
     <div>
         <br /><h5>Manager ID</h5>
-        <select class="col-form-label" @Html.TextBoxFor(r => r.MANAGER_ID, new { required = "required", pattern = "{1,4}" })>
-            <option value=""> </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
+              <select class="col-form-label" @Html.TextBoxFor(r => r.MANAGER_ID, new { required = "required", pattern = "{1,4}" })>
+                  <option value=""> </option>
+                  <optgroup label="Select an ID">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      </optgroup>
+              </select>
     </div>
     <br />
     <input class=" col-12 col-md-3 btn btn-block btn-lg btn-outline-success" type="submit" name="Save" value="Save " />

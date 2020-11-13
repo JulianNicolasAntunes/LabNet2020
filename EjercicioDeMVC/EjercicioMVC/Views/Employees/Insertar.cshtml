@@ -17,14 +17,16 @@
                   <div><br /><h5>Last Name</h5> @Html.TextBoxFor(r => r.LAST_NAME, new { minlength = "3", required = "required" })</div>
                   <div><br /><h5>Salary</h5> @Html.TextBoxFor(r => r.SALARY, new { type = "number", min = "1", required = "required" })</div>
                   <div><br /><h5>Department</h5><select class="col-form-label" @Html.TextBoxFor(r => r.DEPARTMENT_ID, new { required = "required" })>
-                          <option value=""> </option>
-                          <option value="10">10</option>
-                          <option value="20">20</option>
-                          <option value="30">30</option>
-                          <option value="31">31</option>
-                          <option value="40">40</option>
-                          <option value="50">50</option>
-                      </select>
+                                <option value=""> </option>
+                                <optgroup label="Select an ID">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                    </optgroup>
+                            </select>
                   </div>
                   <div><br /><h5>Job ID</h5><select class="col-form-label" @Html.TextBoxFor(r => r.JOB_ID, new { required = "required" })>
                                 <option value=""> </option>
@@ -49,10 +51,7 @@
                                         <option value="4">4</option>
                                         </optgroup>
                                 </select>
-                      </div>
-                      <br />
-                      <input class=" col-12 col-md-3 btn btn-block btn-lg btn-outline-primary" type="submit" name="Save" value="Save " />
-
+                      </div><br /> <input class=" col-12 col-md-3 btn btn-block btn-lg btn-outline-primary" type="submit" name="Save" value="Save " />
                   </div>
               </div>
           </div>
