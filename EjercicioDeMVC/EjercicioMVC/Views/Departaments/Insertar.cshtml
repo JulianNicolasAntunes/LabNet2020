@@ -22,7 +22,7 @@
          <div><br /><h5>Department Description</h5> @Html.TextBoxFor(r => r.DEPARTMENT_DESCRIPTION)</div>
          <div>
              <br /><h5>Location ID<</h5>
-             <select class="col-form-label" @Html.TextBoxFor(r => r.LOCATION_ID)>
+             <select class="col-form-label" @Html.TextBoxFor(r => r.LOCATION_ID , new { type = "number", required = "required"})>
                  <option value=""> </option>
                  <option value="1">1</option>
                  <option value="2">2</option>

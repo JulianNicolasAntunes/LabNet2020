@@ -3,8 +3,6 @@
     ViewBag.Title = "Update Departments";
 }
 
-<h2>Actualizar deptos</h2>
-
 @using (Html.BeginForm("Update", "Departaments", FormMethod.Post))
 {
 <body>
@@ -18,7 +16,7 @@
 
         <div><h5>Department Name</h5> @Html.TextBoxFor(r => r.DEPARTMENT_NAME, new { type = "text", minlength = "3", required = "required" })</div>
         <br /><h5>Location ID<</h5>
-       <select class="col-form-label" @Html.TextBoxFor(r => r.LOCATION_ID)>
+       <select class="col-form-label" @Html.TextBoxFor(r => r.LOCATION_ID,, new {type = "number",  required = "required"})>
             <option value=""> </option>
             <option value="1">1</option>
             <option value="2">2</option>

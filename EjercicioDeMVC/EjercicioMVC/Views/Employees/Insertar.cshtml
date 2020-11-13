@@ -5,7 +5,7 @@
 
 
 @using (Html.BeginForm("Insertar", "Employees", FormMethod.Post))
-   
+
 { <body>
           <div class="container">
               <div class="row no-gutters">
@@ -16,9 +16,9 @@
                   <img src="@Url.Content("~/Content/img/personas.png")" alt="">
               </div>
               <div class="container">
-                  <div ><h5>First Name</h5> @Html.TextBoxFor(r => r.FIRST_NAME, new { minlength = "3" , required = "required" })</div>
-                  <div><br /><h5>Last Name</h5> @Html.TextBoxFor(r => r.LAST_NAME, new { minlength = "3" , required = "required" })</div>
-                  <div><br /><h5>Salary</h5> @Html.TextBoxFor(r => r.SALARY, new { type = "number",required = "required" })</div>
+                  <div ><h5>First Name</h5> @Html.TextBoxFor(r => r.FIRST_NAME, new { minlength = "3", required = "required" })</div>
+                  <div><br /><h5>Last Name</h5> @Html.TextBoxFor(r => r.LAST_NAME, new { minlength = "3", required = "required" })</div>
+                  <div><br /><h5>Salary</h5> @Html.TextBoxFor(r => r.SALARY, new { type = "number", min = "1", required = "required" })</div>
                   <div>
                       <br /><h5>Department</h5>
                       <select class="col-form-label" @Html.TextBoxFor(r => r.DEPARTMENT_ID, new { required = "required" })>
@@ -33,7 +33,7 @@
                   </div>
                   <div>
                       <br /><h5>Job ID</h5>
-                      <select class="col-form-label" @Html.TextBoxFor(r => r.JOB_ID)>
+                      <select class="col-form-label" @Html.TextBoxFor(r => r.JOB_ID, new {required = "required" })>
                           <option value=""> </option>
                           <option value="AD_CTB">AD_CTB</option>
                           <option value="AD_PBC">AD_PBC</option>
@@ -45,7 +45,7 @@
                       </div>
                       <div>
                           <br /><h5>Manager ID</h5>
-                          <select class="col-form-label" @Html.TextBoxFor(r => r.MANAGER_ID)>
+                          <select class="col-form-label" @Html.TextBoxFor(r => r.MANAGER_ID, new { required = "required"})>
                               <option value=""> </option>
                               <option value="1">1</option>
                               <option value="2">2</option>
