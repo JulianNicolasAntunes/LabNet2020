@@ -19,6 +19,16 @@ namespace EjercicioMVC.Controllers
            
             return View(employees);
         }
+        //public ActionResult Buscador(String Nombre)
+        //{
+        //    var busqueda = from s in context.EMPLOYEES select s;
+        //    if (!String.IsNullOrEmpty(Nombre))
+        //    {
+        //        busqueda = busqueda.Where(j => j. Nombre);
+        //    }
+        //    return View(busqueda);
+        //}
+
         public ActionResult Insertar()
         {
             return View();
