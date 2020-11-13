@@ -7,7 +7,7 @@
 {<div class="container">
         <div class="row no-gutters">
             <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2>Update person!</h2>
+                <h2 class="text-info">Update person!</h2>
             </div>
         </div>
         <div><h5>First Name</h5> @Html.TextBoxFor(r => r.FIRST_NAME, new { type = "text", minlength = "3",required = "required" })</div>
@@ -16,7 +16,7 @@
         <br /><h5>Department</h5>
     <div>
         <select class="col-form-label" @Html.TextBoxFor(r => r.DEPARTMENT_ID, new { required = "required" })>
-            <option value="1"> </option>
+            <option value=""> </option>
             <option value="10">10</option>
             <option value="20">20</option>
             <option value="30">30</option>
