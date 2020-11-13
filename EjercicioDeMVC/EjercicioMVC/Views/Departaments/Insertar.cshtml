@@ -18,7 +18,7 @@
              <img src="@Url.Content("~/Content/img/city.png")" alt="">
          </div>
 
-         <div><br /><h5>Department Name</h5> @Html.TextBoxFor(r => r.DEPARTMENT_NAME)</div>
+         <div><br /><h5>Department Name</h5> @Html.TextBoxFor(r => r.DEPARTMENT_NAME, new { required = "required" })</div>
          <div><br /><h5>Department Description</h5> @Html.TextBoxFor(r => r.DEPARTMENT_DESCRIPTION)</div>
          <div>
              <br /><h5>Location ID<</h5>
