@@ -15,7 +15,6 @@
         <td>City</td>
         <td></td>
         <td>Accion</td>
-        
     </tr>
     @foreach (var local in Model)
     {
@@ -28,9 +27,7 @@
                 @Html.ActionLink("Delete", "Delete", new { id = local.ID }, new { onclick = "return confirm('Are you sure you want to remove the selected item from the list?')" })
                 <br />
                 @Html.ActionLink("Update", "Update", new { id = local.ID }, new { onclick = "return confirm('Are you sure you want to update the selected item from the list?')" })
-
             </td>
-            
         </tr>
     }
 </table>
