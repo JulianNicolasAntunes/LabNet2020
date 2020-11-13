@@ -7,26 +7,18 @@
 {
 <body>
     <div class="row no-gutters">
-
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
             <h2 class="text-info">Update a department!</h2>
         </div>
     </div>
-    <div>
-
-        <div><h5>Department Name</h5> @Html.TextBoxFor(r => r.DEPARTMENT_NAME, new { type = "text", minlength = "3", required = "required" })</div>
-        <br /><h5>Location ID</h5>
-              <select class="col-form-label" @Html.TextBoxFor(r => r.LOCATION_ID, new { type = "number", required = "required" })>
+    <div><div><h5>Department Name</h5> @Html.TextBoxFor(r => r.DEPARTMENT_NAME, new { type = "text", minlength = "3", required = "required" })</div>
+        <br /><h5>Location ID</h5><select class="col-form-label" @Html.TextBoxFor(r => r.LOCATION_ID, new { type = "number", required = "required" })>
                   <optgroup label="Select an ID">
-                      <option value=""> </option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
-                      </optgroup>
-              </select>
-
+                      </optgroup> </select>
         <input class=" col-12 col-md-3 btn btn-block btn-lg btn-outline-success" type="submit" name="Save" value="Save " />
-
     </div>
 </body>
 }

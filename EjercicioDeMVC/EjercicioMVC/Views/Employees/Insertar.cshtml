@@ -9,20 +9,15 @@
 { <body>
           <div class="container">
               <div class="row no-gutters">
-                  <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                      <h2 class="text-info">Create a new person </h2>
-                      <p class="lead mb-0">We always have new people working with us!</p>
-                  </div>
+                  <div class="col-lg-6 order-lg-1 my-auto showcase-text"><h2 class="text-info">Create a new person </h2><p class="lead mb-0">We always have new people working with us!</p></div>
                   <img src="@Url.Content("~/Content/img/personas.png")" alt="">
               </div>
               <div class="container">
                   <div ><h5>First Name</h5> @Html.TextBoxFor(r => r.FIRST_NAME, new { minlength = "3", required = "required" })</div>
                   <div><br /><h5>Last Name</h5> @Html.TextBoxFor(r => r.LAST_NAME, new { minlength = "3", required = "required" })</div>
                   <div><br /><h5>Salary</h5> @Html.TextBoxFor(r => r.SALARY, new { type = "number", min = "1", required = "required" })</div>
-                  <div>
-                      <br /><h5>Department</h5>
-                      <select class="col-form-label" @Html.TextBoxFor(r => r.DEPARTMENT_ID, new { required = "required" })>
-                          <option value="1"> </option>
+                  <div><br /><h5>Department</h5><select class="col-form-label" @Html.TextBoxFor(r => r.DEPARTMENT_ID, new { required = "required" })>
+                          <option value=""> </option>
                           <option value="10">10</option>
                           <option value="20">20</option>
                           <option value="30">30</option>
@@ -31,9 +26,7 @@
                           <option value="50">50</option>
                       </select>
                   </div>
-                  <div>
-                      <br /><h5>Job ID</h5>
-                            <select class="col-form-label" @Html.TextBoxFor(r => r.JOB_ID, new { required = "required" })>
+                  <div><br /><h5>Job ID</h5><select class="col-form-label" @Html.TextBoxFor(r => r.JOB_ID, new { required = "required" })>
                                 <option value=""> </option>
                                 <optgroup label="Select an ID">
                                     <option value="AD_CTB">AD_CTB</option>
@@ -48,8 +41,8 @@
                       <div>
                           <br /><h5>Manager ID</h5>
                                 <select class="col-form-label" @Html.TextBoxFor(r => r.MANAGER_ID, new { required = "required" })>
+                                    <option value=""> </option>
                                     <optgroup label="Select an ID">
-                                        <option value=""> </option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>

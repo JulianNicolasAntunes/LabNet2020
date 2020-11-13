@@ -17,12 +17,14 @@
     <div>
         <select class="col-form-label" @Html.TextBoxFor(r => r.DEPARTMENT_ID, new { required = "required" })>
             <option value=""> </option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="30">30</option>
-            <option value="31">31</option>
-            <option value="40">40</option>
-            <option value="50">50</option>
+            <optgroup label="Select an ID">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+                </optgroup>
         </select>
     </div>
     <div><br /><h5>Hire date</h5> @Html.TextBoxFor(r => r.HIRE_DATE, "{0:dd-MM-YY}", new { type = "date" })</div>
