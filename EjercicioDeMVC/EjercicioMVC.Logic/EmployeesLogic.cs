@@ -11,12 +11,11 @@ namespace EjercicioMVC.Logic
     {
         public void Delete(int entity)
         {
-            EMPLOYEES deleteEmployee = GetOne(entity);
-            context.EMPLOYEES.Remove(deleteEmployee);
-            context.SaveChanges();
+             EMPLOYEES employeesDelete = GetOne(entity);
+             context.EMPLOYEES.Remove(employeesDelete);
+             context.SaveChanges();
+            
         }
-
-
 
         public List<EMPLOYEES> GetAll()
         {
@@ -41,10 +40,7 @@ namespace EjercicioMVC.Logic
             {
                 throw new Exception("error");
             }
-                
-            
-           
-            
+          
         }
 
         public void Update(EMPLOYEES entity)
@@ -57,9 +53,7 @@ namespace EjercicioMVC.Logic
             editEmployee.JOB_ID = entity.JOB_ID;
             editEmployee.MANAGER_ID = entity.MANAGER_ID;
             context.SaveChanges();
-        }
-
-       
+        }     
         public int GetNextID()
         {
             int lastId = (from t in context.EMPLOYEES

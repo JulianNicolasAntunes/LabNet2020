@@ -33,42 +33,46 @@
             </div>
         </div>
     </header>
-
     <div class="btn-light">
         <br />
         <div class="container">
             <div class="form-row">
-                <div class="col-lg-6">
+                <div class="col-md-6 mx-auto">
                     <a class="btn btn-block btn-lg btn-outline-primary" href="@Url.Content("~/Departaments/Insertar ")">Insert</a>
                 </div>
-                <div class="col-lg-6">
-                    <a class="btn btn-block btn-lg btn-outline-secondary" href="@Url.Content("~/Departaments/Actualizar ")">Update</a>
-                </div>
-                
+                <br />
             </div>
         </div>
-        <br />
     </div>
 
-    <table class="table">
-        <tr class="btn-primary">
-            <td>ID</td>
-            <td>Department Name</td>
-            <td>Location ID</td>
-            <td>Department Description</td>
-            <td>Accion</td>
-        </tr>
-        @foreach (var depto in Model)
-        {
-            <tr class="btn-light">
-                <td>@depto.ID</td>
-                <td>@depto.DEPARTMENT_NAME</td>
-                <td>@depto.LOCATION_ID</td>
-                <td>@depto.DEPARTMENT_DESCRIPTION</td>
-                <td class="btn-link">@Html.ActionLink("Eliminar", "Delete", "Region", new { id = depto.ID })</td>
-            </tr>
-        }
-    </table>
+            <table class="table">
+                <tr class="btn-primary">
+                    <td></td>
+                    <td>ID</td>
+                    <td>Department Name</td>
+                    <td>Location ID</td>
+                    <td>Department Description</td>
+                    <td>Accion</td>
+
+                </tr>
+                @foreach (var depto in Model)
+                {
+                    <tr class="btn-light">
+                        <td></td>
+                        <td>@depto.ID</td>
+                        <td>@depto.DEPARTMENT_NAME</td>
+                        <td>@depto.LOCATION_ID</td>
+                        <td>@depto.DEPARTMENT_DESCRIPTION</td>
+                        <td class=" btn-block">
+                            @Html.ActionLink("Delete", "Delete", new { id = depto.ID }, new { onclick = "return confirm('Are you sure you want to remove the selected item from the list?')" })>
+                            <br />
+                            @Html.ActionLink("Update", "Update", new { id = depto.ID }, new { onclick = "return confirm('Are you sure you want to remove the selected item from the list?')" })>
+
+                        </td>
+
+                    </tr>
+                }
+            </table>
 
 
 </body>

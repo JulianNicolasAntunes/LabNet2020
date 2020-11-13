@@ -19,27 +19,35 @@ namespace EjercicioMVC.Controllers
             return View(deptos);
 
         }
+        public ActionResult Insertar()
+        {
 
+            return View();
+        }
+        public ActionResult Update()
+        {
+            return View();
+        }
 
-        public ActionResult Insertar(DEPARTMENTS loca)
+        public ActionResult Delete(int id)
+        {
+            var logic = new DepartmentsLogic();
+            logic.Delete(id);
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public ActionResult Insertar(DEPARTMENTS depto)
         {
             var logic = new DepartmentsLogic();
             var deptoEntity = new DEPARTMENTS();
-            deptoEntity.DEPARTMENT_NAME = loca.DEPARTMENT_NAME;
-            deptoEntity.LOCATION_ID = loca.LOCATION_ID;
-            deptoEntity.DEPARTMENT_DESCRIPTION = loca.DEPARTMENT_DESCRIPTION;
+            deptoEntity.DEPARTMENT_NAME = depto.DEPARTMENT_NAME;
+            deptoEntity.LOCATION_ID = depto.LOCATION_ID;
+            deptoEntity.DEPARTMENT_DESCRIPTION = depto.DEPARTMENT_DESCRIPTION;
             logic.Insert(deptoEntity);
             return Redirect("Index");
 
         }
-        public ActionResult Actualizar()
-        {
-            return View();
-        }
-        public ActionResult Eliminar()
-        {
-            return View();
-        }
+  
     }
 }
    

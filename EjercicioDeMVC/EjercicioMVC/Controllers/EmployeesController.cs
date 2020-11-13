@@ -24,14 +24,11 @@ namespace EjercicioMVC.Controllers
         
             return View();
         }
-        public ActionResult Actualizar()
+        public ActionResult Update()
         {
             return View();
         }
-        public ActionResult Eliminar()
-        {
-            return View();
-        }
+    
 
         [HttpPost]
         public ActionResult Insertar (EMPLOYEES emplo)
@@ -50,15 +47,13 @@ namespace EjercicioMVC.Controllers
             return Redirect("Index");
 
         }
-        [HttpPost]
-        public ActionResult Eliminar(int IDEmployee)
+        public ActionResult Delete(int id)
         {
-          
-                var logic = new EmployeesLogic();
-                logic.Delete(IDEmployee);
-                return RedirectToAction("Index");
-    
-       
+
+            var logic = new EmployeesLogic();
+            logic.Delete(id);
+            return RedirectToAction("index");
+
         }
     }
 }

@@ -24,14 +24,12 @@ namespace EjercicioMVC.Controllers
         {
             return View();
         }
-        public ActionResult Actualizar()
+        public ActionResult Update()
         {
             return View();
         }
-        public ActionResult Eliminar()
-        {
-            return View();
-        }
+
+    
         [HttpPost]
         public ActionResult Insertar(LOCATIONS loca)
         {
@@ -41,6 +39,12 @@ namespace EjercicioMVC.Controllers
             logic.Insert(locationEntity);
             return Redirect("Index");
 
+        }
+        public ActionResult Delete(int id)
+        {
+            var logic = new LocationsLogic();
+            logic.Delete(id);
+            return RedirectToAction("index");
         }
     }
 }

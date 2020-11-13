@@ -143,6 +143,7 @@
     <Content Include="Content\img\bg-showcase-1.jpg" />
     <Content Include="Content\img\bg-showcase-2.jpg" />
     <Content Include="Content\img\bg-showcase-3.jpg" />
+    <Content Include="Content\img\city.png" />
     <Content Include="Content\img\favicon.ico" />
     <Content Include="Content\img\PeopleLogo.png" />
     <Content Include="Content\img\PeopleLogoNegro.png" />
@@ -253,10 +254,10 @@
     <Content Include="Views\Departaments\Index.cshtml" />
     <Content Include="Views\Location\Index.cshtml" />
     <Content Include="Views\Departaments\Insertar.cshtml" />
-    <Content Include="Views\Departaments\Actualizar.cshtml" />
+    <Content Include="Views\Departaments\Update.cshtml" />
     <Content Include="Views\Employees\Insertar.cshtml" />
-    <Content Include="Views\Employees\Actualizar.cshtml" />
-    <Content Include="Views\Location\Actualizar.cshtml" />
+    <Content Include="Views\Employees\Update.cshtml" />
+    <Content Include="Views\Location\Update.cshtml" />
     <Content Include="Views\Location\Insertar.cshtml" />
   </ItemGroup>
   <ItemGroup>

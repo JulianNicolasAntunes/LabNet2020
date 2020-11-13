@@ -16,6 +16,7 @@ namespace EjercicioMVC.Logic
             DEPARTMENTS deleteDepto = GetOne(entity);
             context.DEPARTMENTS.Remove(deleteDepto);
             context.SaveChanges();
+
         }
 
         public List<DEPARTMENTS> GetAll()
@@ -31,11 +32,18 @@ namespace EjercicioMVC.Logic
 
         public DEPARTMENTS Insert(DEPARTMENTS entity)
         {
-           
+            try
+            {
                 entity.ID = GetNextID();
                 DEPARTMENTS depto = context.DEPARTMENTS.Add(entity);
                 context.SaveChanges();
-                return depto;
+                return depto; 
+         
+            }
+            catch
+            {
+                throw new Exception("error");
+            }
 
         }
         public int GetNextID()
