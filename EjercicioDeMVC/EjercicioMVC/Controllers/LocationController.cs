@@ -28,8 +28,18 @@ namespace EjercicioMVC.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Update(LOCATIONS location)
+        {
+            var logic = new LocationsLogic();
+            var locaEntity = logic.GetOne(location.ID);
+            if (location.CITY != null)
+                locaEntity.CITY = location.CITY;
+            logic.Update(locaEntity);
+            return RedirectToAction("index");
+        }
 
-    
+
         [HttpPost]
         public ActionResult Insertar(LOCATIONS loca)
         {

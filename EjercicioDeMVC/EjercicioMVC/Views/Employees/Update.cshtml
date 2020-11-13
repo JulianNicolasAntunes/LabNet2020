@@ -7,28 +7,44 @@
 
 @using (Html.BeginForm("Update", "Employees", FormMethod.Post))
 {<div class="container">
+        <div class="row no-gutters">
 
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>Update person!</h2>
+            </div>
+        </div>
 
-    <div><h5>ID</h5> @Html.TextBoxFor(r => r.ID)</div>
-    <div><h5>First Name</h5> @Html.TextBoxFor(r => r.FIRST_NAME)</div>
-    <div><br /><h5>Last Name</h5> @Html.TextBoxFor(r => r.LAST_NAME)</div>
-    <div><br /><h5>Salary</h5> @Html.TextBoxFor(r => r.SALARY)</div>
-    <div><br /><h5>Department ID</h5> @Html.TextBoxFor(r => r.DEPARTMENT_ID)</div>
-    @*<div><br /><h5>Job ID</h5> @Html.TextBoxFor(r => r.JOB_ID)</div>*@
- <div>
-     <br /><h5>Job ID</h5>
-     <select class="col-form-label" @Html.TextBoxFor(r => r.JOB_ID)>
-         <option value="1"> </option>
-         <option value="2">AD_CTB</option>
-         <option value="3">AD_PBC</option>
-         <option value="4">FQ_GRT</option>
-         <option value="5">FQ_OPR</option>
-     </select>
- </div>
+        <div><h5>First Name</h5> @Html.TextBoxFor(r => r.FIRST_NAME)</div>
+        <div><br /><h5>Last Name</h5> @Html.TextBoxFor(r => r.LAST_NAME)</div>
+        <div><br /><h5>Salary</h5> @Html.TextBoxFor(r => r.SALARY)</div>
+        <br /><h5>Department</h5>
+    <div>
+        <select class="col-form-label" @Html.TextBoxFor(r => r.DEPARTMENT_ID, new { required = "required" })>
+            <option value="1"> </option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+        </select>
+    </div>
+
     <div><br /><h5>Hire date</h5> @Html.TextBoxFor(r => r.HIRE_DATE, "{0:dd-MM-yy}", new { type = "date" })</div>
-    <div><br /><h5>Manager ID</h5> @Html.TextBoxFor(r => r.MANAGER_ID)</div>
+    <div>
+        <br /><h5>Manager ID</h5>
+        <select class="col-form-label" @Html.TextBoxFor(r => r.MANAGER_ID)>
+            <option value=""> </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+
+    </div>
     <br />
     <input type="submit" name="Save" value="Save " />
 
-</div>
+    </div>
 }

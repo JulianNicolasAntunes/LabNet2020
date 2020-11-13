@@ -24,9 +24,22 @@ namespace EjercicioMVC.Controllers
 
             return View();
         }
-        public ActionResult Update()
+
+        [HttpPost]
+        public ActionResult Update(DEPARTMENTS department)
         {
-            return View();
+            var logic = new DepartmentsLogic();
+            var deptoEntity = logic.GetOne(department.ID);
+            if (department.DEPARTMENT_NAME != null)
+            {
+                deptoEntity.DEPARTMENT_NAME = department.DEPARTMENT_NAME;
+            }
+            if (department.DEPARTMENT_DESCRIPTION != null)
+            {
+                deptoEntity.DEPARTMENT_DESCRIPTION = department.DEPARTMENT_DESCRIPTION;
+            }
+            logic.Update(deptoEntity);
+            return RedirectToAction("index");
         }
 
         public ActionResult Delete(int id)

@@ -3,18 +3,21 @@
     ViewBag.Title = "Update Employees";
 }
 
-<h2>Actualizar Employees</h2>
 
 @using (Html.BeginForm("Update", "Location", FormMethod.Post))
 {<div class="container">
 
+     <div class="row no-gutters">
 
-        <div><h5>ID</h5> @Html.TextBoxFor(r => r.ID)</div>
-        <div><br /><h5>City</h5> @Html.TextBoxFor(r => r.CITY)</div>
+         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+             <h2>Update a location!</h2>
+         </div>
+     </div>
+    <div><br /><h5>City</h5> @Html.TextBoxFor(r => r.CITY)</div>
 
 
-        <br />
-        <input type="submit" name="Save" value="Save " />
+    <br />
+    <input type="submit" name="Save" value="Save " />
 
-    </div>
+</div>
 }

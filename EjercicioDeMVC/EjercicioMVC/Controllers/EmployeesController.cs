@@ -24,6 +24,35 @@ namespace EjercicioMVC.Controllers
         
             return View();
         }
+        [HttpPost]
+        public ActionResult Update(EMPLOYEES employee)
+        {
+            var logic = new EmployeesLogic();
+            var emploEntity = logic.GetOne(employee.ID);
+            if (employee.FIRST_NAME != null) 
+            {
+                emploEntity.FIRST_NAME = employee.FIRST_NAME; 
+            }
+            if (employee.LAST_NAME != null) 
+            {
+                emploEntity.LAST_NAME = employee.LAST_NAME; 
+            }
+            if (employee.SALARY != null) 
+            {
+                emploEntity.SALARY = employee.SALARY; 
+            }
+            if (employee.DEPARTMENT_ID != null)
+            {
+                emploEntity.DEPARTMENT_ID = employee.DEPARTMENT_ID;
+            }
+            if (employee.MANAGER_ID != null)
+            {
+                emploEntity.MANAGER_ID = employee.MANAGER_ID;
+            }
+
+            logic.Update(emploEntity);
+            return RedirectToAction("index");
+        }
         public ActionResult Update()
         {
             return View();

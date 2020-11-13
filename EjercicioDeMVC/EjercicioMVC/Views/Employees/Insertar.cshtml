@@ -5,52 +5,66 @@
 
 
 @using (Html.BeginForm("Insertar", "Employees", FormMethod.Post))
-{<div class="container">
-    <h3>Insert Employees</h3>
-    <div><h5>First Name</h5> @Html.TextBoxFor(r => r.FIRST_NAME, new { required = "required" }) </div>
-    <div><br /><h5>Last Name</h5> @Html.TextBoxFor(r => r.LAST_NAME, new { required = "required" })</div>
-    <div><br /><h5>Salary</h5> @Html.TextBoxFor(r => r.SALARY, new { required = "required" })</div>
-    <div>
-        <br /><h5>Department</h5>
-        <select class="col-form-label" @Html.TextBoxFor(r => r.DEPARTMENT_ID, new { required = "required" })>
-            <option value="1"> </option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="30">30</option>
-            <option value="31">31</option>
-            <option value="40">40</option>
-            <option value="50">50</option>
-        </select>
-    </div>
+   
+{ <body>
+      <div class="container">
+          <div class="row no-gutters">
 
-    <div>
-        <br /><h5>Job ID</h5>
-        <select class="col-form-label" @Html.TextBoxFor(r => r.JOB_ID)>
-            <option value=""> </option>
-            <option value="AD_CTB">AD_CTB</option>
-            <option value="AD_PBC">AD_PBC</option>
-            <option value="FQ_GRT">FQ_GRT</option>
-            <option value="FQ_OPR">FQ_OPR</option>
-        </select>
+              <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                  <h2>Create a new person </h2>
+                  <p class="lead mb-0">We always have new people working with us!</p>
+
+              </div>
+              <img src="@Url.Content("~/Content/img/personas.png")" alt="">
+          </div>
+          <div class="container">
+
+              <div><h5>First Name</h5> @Html.TextBoxFor(r => r.FIRST_NAME, new { required = "required" }) </div>
+              <div><br /><h5>Last Name</h5> @Html.TextBoxFor(r => r.LAST_NAME, new { required = "required" })</div>
+              <div><br /><h5>Salary</h5> @Html.TextBoxFor(r => r.SALARY, new { required = "required" })</div>
+              <div>
+                  <br /><h5>Department</h5>
+                  <select class="col-form-label" @Html.TextBoxFor(r => r.DEPARTMENT_ID, new { required = "required" })>
+                      <option value="1"> </option>
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                      <option value="40">40</option>
+                      <option value="50">50</option>
+                  </select>
+              </div>
+              
         <div>
-            <br /><h5>Hire date</h5> @Html.TextBoxFor(r => r.HIRE_DATE, "{0:dd-MM-yy}", new { type = "date", required = "required" })
-        </div>
-        <div>
-            <br /><h5>Manager ID</h5>
-            <select class="col-form-label" @Html.TextBoxFor(r => r.MANAGER_ID)>
+            <br /><h5>Job ID</h5>
+            <select class="col-form-label" @Html.TextBoxFor(r => r.JOB_ID)>
                 <option value=""> </option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+                <option value="AD_CTB">AD_CTB</option>
+                <option value="AD_PBC">AD_PBC</option>
+                <option value="FQ_GRT">FQ_GRT</option>
+                <option value="FQ_OPR">FQ_OPR</option>
             </select>
+            <div>
+              <br /><h5>Hire date</h5> @Html.TextBoxFor(r => r.HIRE_DATE, "{0:dd-MM-yy}", new { type = "date", required = "required" })
+          </div>
+                  <div>
+                      <br /><h5>Manager ID</h5>
+                      <select class="col-form-label" @Html.TextBoxFor(r => r.MANAGER_ID)>
+                          <option value=""> </option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                      </select>
 
 
-        </div>
+                  </div>
 
-        <br />
-        <input type="submit" name="Save" value="Save " />
+                  <br />
+                  <input type="submit" name="Save" value="Save " />
 
-    </div>
-</div>
+              </div>
+          </div>
+      </div>
+</body>
         }

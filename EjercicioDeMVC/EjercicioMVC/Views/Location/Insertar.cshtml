@@ -3,19 +3,28 @@
     ViewBag.Title = "Insert Employees";
 }
 
-<h2>Insertar Employees</h2>
 
 
 @using (Html.BeginForm("Insertar", "Location", FormMethod.Post))
-{<div class="container">
+{<body>
+    <div class="container">
+        <div class="row no-gutters">
 
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>Create a new location </h2>
+                <p class="lead mb-0">We are always looking to create new location!</p>
 
-       
-        <div><br /><h5>City</h5> @Html.TextBoxFor(r => r.CITY, new { required = "required" })</div>
+            </div>
+            <img src="@Url.Content("~/Content/img/mundo.png")" alt="">
+        </div>
+        <div class="container">
+            <div><br /><h5>City</h5> @Html.TextBoxFor(r => r.CITY, new { required = "required" })</div>
+            <br />
+            <input type="submit" name="Save" value="Save " />
 
+        </div>
+   </div>
 
-        <br />
-        <input type="submit" name="Save" value="Save " />
-
-    </div>
+</body>
+  
 }

@@ -145,8 +145,10 @@
     <Content Include="Content\img\bg-showcase-3.jpg" />
     <Content Include="Content\img\city.png" />
     <Content Include="Content\img\favicon.ico" />
+    <Content Include="Content\img\mundo.png" />
     <Content Include="Content\img\PeopleLogo.png" />
     <Content Include="Content\img\PeopleLogoNegro.png" />
+    <Content Include="Content\img\personas.png" />
     <Content Include="Content\img\testimonials-1.jpg" />
     <Content Include="Content\img\testimonials-2.jpg" />
     <Content Include="Content\img\testimonials-3.jpg" />
