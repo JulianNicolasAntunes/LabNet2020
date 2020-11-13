@@ -12,9 +12,9 @@
                 <h2>Update person!</h2>
             </div>
         </div>
-        <div><h5>First Name</h5> @Html.TextBoxFor(r => r.FIRST_NAME, new { required = "required" })</div>
-        <div><br /><h5>Last Name</h5> @Html.TextBoxFor(r => r.LAST_NAME, new { required = "required" })</div>
-        <div><br /><h5>Salary</h5> @Html.TextBoxFor(r => r.SALARY, new { required = "required" })</div>
+        <div><h5>First Name</h5> @Html.TextBoxFor(r => r.FIRST_NAME, new { type = "text", minlength = "3",required = "required" })</div>
+        <div><br /><h5>Last Name</h5> @Html.TextBoxFor(r => r.LAST_NAME, new { type = "text", minlength = "3",required = "required" })</div>
+        <div><br /><h5>Salary</h5> @Html.TextBoxFor(r => r.SALARY, new { type = "number", required = "required" })</div>
         <br /><h5>Department</h5>
     <div>
         <select class="col-form-label" @Html.TextBoxFor(r => r.DEPARTMENT_ID, new { required = "required" })>

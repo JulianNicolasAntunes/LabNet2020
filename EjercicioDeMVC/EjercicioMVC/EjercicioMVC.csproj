@@ -162,6 +162,7 @@
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\vendor\bootstrap\js\validator.js" />
     <Content Include="Content\vendor\fontawesome-free\css\all.css" />
     <Content Include="Content\vendor\fontawesome-free\css\all.min.css" />
     <Content Include="Content\vendor\fontawesome-free\css\brands.css" />

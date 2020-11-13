@@ -15,11 +15,16 @@
         </div>
     </div>
     <div>
-    
-        <div><h5>Department Name</h5> @Html.TextBoxFor(r => r.DEPARTMENT_NAME)</div>
-        <div><br /><h5>Location ID</h5> @Html.TextBoxFor(r => r.LOCATION_ID)</div>
-        <div><br /><h5>Department Description</h5> @Html.TextBoxFor(r => r.DEPARTMENT_DESCRIPTION)</div>
-        <br />
+
+        <div><h5>Department Name</h5> @Html.TextBoxFor(r => r.DEPARTMENT_NAME, new { type = "text", minlength = "3", required = "required" })</div>
+        <br /><h5>Location ID<</h5>
+       <select class="col-form-label" @Html.TextBoxFor(r => r.LOCATION_ID)>
+            <option value=""> </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+
         <input class=" col-12 col-md-3 btn btn-block btn-lg btn-outline-success" type="submit" name="Save" value="Save " />
 
     </div>

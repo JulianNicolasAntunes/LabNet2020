@@ -16,12 +16,11 @@ namespace EjercicioMVC.Controllers
         {
             var logic = new EmployeesLogic();
             var employees = logic.GetAll();
-             
+           
             return View(employees);
         }
         public ActionResult Insertar()
         {
-        
             return View();
         }
         [HttpPost]
@@ -49,7 +48,7 @@ namespace EjercicioMVC.Controllers
             {
                 emploEntity.MANAGER_ID = employee.MANAGER_ID;
             }
-
+            
             logic.Update(emploEntity);
             return RedirectToAction("index");
         }
@@ -72,6 +71,7 @@ namespace EjercicioMVC.Controllers
             employeesEntity.MANAGER_ID = emplo.MANAGER_ID;
 
             logic.Insert(employeesEntity);
+
             return Redirect("Index");
 
         }
