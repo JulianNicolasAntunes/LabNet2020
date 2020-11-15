@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EjercicioMVC.Entity;
+using EjercicioMVC.Models;
 
 namespace EjercicioMVC.Controllers
 {
@@ -24,6 +25,11 @@ namespace EjercicioMVC.Controllers
         public ActionResult Locations()
         {
             return View();
+        }
+        public JsonResult GetWeather()
+        {
+            Weather weath = new Weather();
+            return Json(weath.getWeatherForcast(), JsonRequestBehavior.AllowGet);
         }
 
     }
