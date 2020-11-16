@@ -99,7 +99,7 @@ namespace EjercicioMVC.Controllers
             }
             return Redirect("Index");
 
-        }
+        } 
         public ActionResult Delete(int id)
         {
 

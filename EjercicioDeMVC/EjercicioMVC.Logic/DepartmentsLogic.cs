@@ -23,7 +23,7 @@ namespace EjercicioMVC.Logic
                 throw new Exception("Error DELDEP");
 
             }
-        }
+        } 
 
         public List<DEPARTMENTS> GetAll()
         {

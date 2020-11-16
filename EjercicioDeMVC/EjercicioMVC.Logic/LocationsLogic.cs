@@ -28,7 +28,7 @@ namespace EjercicioMVC.Logic
         public LOCATIONS GetOne(int id)
         {
             return context.LOCATIONS.First(r => r.ID.Equals(id));
-        }
+        } 
 
         public LOCATIONS Insert(LOCATIONS entity)
         {

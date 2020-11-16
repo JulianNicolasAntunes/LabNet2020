@@ -28,7 +28,7 @@ namespace EjercicioMVC.Controllers
         //    if (!String.IsNullOrEmpty(Nombre))
         //    {
         //        busqueda = busqueda.Where(j => j. Nombre);
-        //    }
+        //    } 
         //    return View(busqueda);
         //}
 

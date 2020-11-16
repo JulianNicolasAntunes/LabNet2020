@@ -52,7 +52,7 @@ namespace EjercicioMVC.Controllers
                 deptoEntity.DEPARTMENT_DESCRIPTION = department.DEPARTMENT_DESCRIPTION;
             }
             try { logic.Update(deptoEntity); }
-            catch (Exception exception)
+            catch (Exception exception) 
             {
                 TempData["Mensaje"] = "Error al actualizar un departamento." + exception.Message;
             }

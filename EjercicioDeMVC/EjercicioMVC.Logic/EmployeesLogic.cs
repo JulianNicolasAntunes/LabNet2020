@@ -31,7 +31,7 @@ namespace EjercicioMVC.Logic
         {
             return context.EMPLOYEES.First(r => r.ID.Equals(id));
         }
-
+         
         public EMPLOYEES Insert(EMPLOYEES entity)
         {
             try

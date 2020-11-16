@@ -15,3 +15,4 @@ namespace EjercicioMVC.Logic
        void Delete(int entity);
     }
 }
+ 

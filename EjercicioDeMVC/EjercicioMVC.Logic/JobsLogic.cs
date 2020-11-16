@@ -40,7 +40,7 @@ namespace EjercicioMVC.Logic
                 return newJob;
             }
             catch { throw new Exception("Error"); }
-        }
+        } 
 
         public void Update(JOBS entity)
         {
