@@ -9,4 +9,5 @@ V2:{
 V3:{
     +API CLIMA
     +REPORT
+    +MANEJO DE EXCEPTION
     }
