@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EjercicioMVC.ResourceAccess;
 
 
 namespace EjercicioMVC.Controllers
@@ -17,19 +18,25 @@ namespace EjercicioMVC.Controllers
         {
             var logic = new EmployeesLogic();
             var employees = logic.GetAll();
-           
+            if (TempData["Mensaje"] != null)
+                ViewData["Mensaje"] = TempData["Mensaje"].ToString();
             return View(employees);
         }
-        //public ActionResult Buscador(String Nombre)
-        //{
-        //    var busqueda = from s in context.EMPLOYEES select s;
-        //    if (!String.IsNullOrEmpty(Nombre))
-        //    {
-        //        busqueda = busqueda.Where(j => j. Nombre);
-        //    }
-        //    return View(busqueda);
-        //}
-
+        
+      
+        private PracticaSQLContext  database = new PracticaSQLContext();
+        // Buscador no funciona todavia
+        public ActionResult Search(string search)
+        {
+            var emplo = from a in database.EMPLOYEES
+                           select a;
+            if (!String.IsNullOrEmpty(search))
+            {
+                emplo = emplo.Where(s => s.LAST_NAME.Contains(search));
+            }
+            return View(emplo.ToList());
+        }
+   
         public ActionResult Insertar()
         {
             return View();
@@ -59,8 +66,12 @@ namespace EjercicioMVC.Controllers
             {
                 emploEntity.MANAGER_ID = employee.MANAGER_ID;
             }
-            
-            logic.Update(emploEntity);
+
+            try { logic.Update(emploEntity); }
+            catch (Exception exception)
+            {
+                TempData["Mensaje"] = "Error al actualizar un empleado." + exception.Message;
+            }
             return RedirectToAction("index");
         }
         public ActionResult Update()
@@ -81,8 +92,11 @@ namespace EjercicioMVC.Controllers
             employeesEntity.HIRE_DATE = emplo.HIRE_DATE;
             employeesEntity.MANAGER_ID = emplo.MANAGER_ID;
 
-            logic.Insert(employeesEntity);
-
+            try { logic.Insert(employeesEntity); }
+            catch (Exception exception)
+            {
+                TempData["Mensaje"] = "Error al insertar un empleado." + exception.Message;
+            }
             return Redirect("Index");
 
         }
@@ -90,7 +104,11 @@ namespace EjercicioMVC.Controllers
         {
 
             var logic = new EmployeesLogic();
-            logic.Delete(id);
+            try { logic.Delete(id); }
+            catch (Exception exception)
+            {
+                TempData["Mensaje"] = "Error al eliminar un empleado." + exception.Message;
+            }
             return RedirectToAction("index");
 
         }

@@ -11,9 +11,13 @@ namespace EjercicioMVC.Logic
     {
         public void Delete(int entity)
         {
-            JOBS deleteJob = GetOne(entity);
-            context.JOBS.Remove(deleteJob);
-            context.SaveChanges();
+            try
+            {
+                JOBS deleteJob = GetOne(entity);
+                context.JOBS.Remove(deleteJob);
+                context.SaveChanges();
+            }
+            catch { throw new Exception("Error"); }
         }
 
         public List<JOBS> GetAll()
@@ -29,9 +33,13 @@ namespace EjercicioMVC.Logic
 
         public JOBS Insert(JOBS entity)
         {
-            JOBS newJob = context.JOBS.Add(entity);
-            context.SaveChanges();
-            return newJob;
+            try
+            {
+                JOBS newJob = context.JOBS.Add(entity);
+                context.SaveChanges();
+                return newJob;
+            }
+            catch { throw new Exception("Error"); }
         }
 
         public void Update(JOBS entity)

@@ -17,6 +17,8 @@ namespace EjercicioMVC.Controllers
         {
             var logic = new DepartmentsLogic();
             var deptos = logic.GetAll();
+            if (TempData["Mensaje"] != null)
+                ViewData["Mensaje"] = TempData["Mensaje"].ToString();
             return View(deptos);
 
         }
@@ -49,14 +51,23 @@ namespace EjercicioMVC.Controllers
             {
                 deptoEntity.DEPARTMENT_DESCRIPTION = department.DEPARTMENT_DESCRIPTION;
             }
-            logic.Update(deptoEntity);
+            try { logic.Update(deptoEntity); }
+            catch (Exception exception)
+            {
+                TempData["Mensaje"] = "Error al actualizar un departamento." + exception.Message;
+            }
+            
             return RedirectToAction("index");
         }
 
         public ActionResult Delete(int id)
         {
             var logic = new DepartmentsLogic();
-            logic.Delete(id);
+          try { logic.Delete(id); }
+             catch (Exception exception)
+            {
+                TempData["Mensaje"] = "Error al eliminar un departamento." + exception.Message;
+            }
             return RedirectToAction("Index");
         }
         [HttpPost]
@@ -67,7 +78,15 @@ namespace EjercicioMVC.Controllers
             deptoEntity.DEPARTMENT_NAME = depto.DEPARTMENT_NAME;
             deptoEntity.LOCATION_ID = depto.LOCATION_ID;
             deptoEntity.DEPARTMENT_DESCRIPTION = depto.DEPARTMENT_DESCRIPTION;
-            logic.Insert(deptoEntity);
+
+            try
+            {
+                logic.Insert(deptoEntity);
+            }
+            catch (Exception exception)
+            {
+                TempData["Mensaje"] = "Error al insertar un departamento." + exception.Message;
+            }
             return Redirect("Index");
 
         }

@@ -11,9 +11,13 @@ namespace EjercicioMVC.Logic
     {
         public void Delete(int entity)
         {
+            try { 
             LOCATIONS deleteLocation = GetOne(entity);
             context.LOCATIONS.Remove(deleteLocation);
-            context.SaveChanges();
+            context.SaveChanges(); }
+        
+            catch { throw new Exception("ErrorDELLOC");
+            }
         }
 
         public List<LOCATIONS> GetAll()
@@ -28,18 +32,29 @@ namespace EjercicioMVC.Logic
 
         public LOCATIONS Insert(LOCATIONS entity)
         {
-
+            try { 
             entity.ID = GetNextID();
             LOCATIONS newLocation = context.LOCATIONS.Add(entity);
             context.SaveChanges();
-            return newLocation;
+            return newLocation; }
+            catch
+            {
+                throw new Exception("Error INSLOC");
+            }
         }
 
         public void Update(LOCATIONS entity)
         {
-            LOCATIONS editLocation = GetOne((entity.ID));
-            editLocation.CITY = entity.CITY;
-            context.SaveChanges();
+            try
+            {
+                LOCATIONS editLocation = GetOne((entity.ID));
+                editLocation.CITY = entity.CITY;
+                context.SaveChanges();
+            }
+            catch
+            {
+                throw new Exception("Error UPDLOC");
+            }
         }
         public int GetNextID()
         {

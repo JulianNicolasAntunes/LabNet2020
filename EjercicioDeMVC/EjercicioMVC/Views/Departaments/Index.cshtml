@@ -4,7 +4,10 @@
 }
 
 <body>
+
     @Html.Partial("_Header")
+    @if (ViewBag.Mensaje != null)
+    {@ViewBag.Mensaje}
     @Html.Partial("_Table")
 </body>
 

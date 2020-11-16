@@ -11,9 +11,14 @@ namespace EjercicioMVC.Logic
     {
         public void Delete(int entity)
         {
-             EMPLOYEES employeesDelete = GetOne(entity);
-             context.EMPLOYEES.Remove(employeesDelete);
-             context.SaveChanges();
+            try
+            {
+                EMPLOYEES employeesDelete = GetOne(entity);
+                context.EMPLOYEES.Remove(employeesDelete);
+                context.SaveChanges();
+            }
+            catch
+            { throw new Exception("Error DELEMP"); }
             
         }
 
@@ -38,21 +43,28 @@ namespace EjercicioMVC.Logic
             }
             catch
             {
-                throw new Exception("error");
+                throw new Exception("Error INSEMP");
             }
           
         }
 
         public void Update(EMPLOYEES entity)
         {
-            EMPLOYEES editEmployee = GetOne(entity.ID);
-            editEmployee.FIRST_NAME = entity.FIRST_NAME;
-            editEmployee.LAST_NAME = entity.LAST_NAME;
-            editEmployee.SALARY = entity.SALARY;
-            editEmployee.DEPARTMENT_ID = entity.DEPARTMENT_ID;
-            editEmployee.JOB_ID = entity.JOB_ID;
-            editEmployee.MANAGER_ID = entity.MANAGER_ID;
-            context.SaveChanges();
+            try
+            {
+                EMPLOYEES editEmployee = GetOne(entity.ID);
+                editEmployee.FIRST_NAME = entity.FIRST_NAME;
+                editEmployee.LAST_NAME = entity.LAST_NAME;
+                editEmployee.SALARY = entity.SALARY;
+                editEmployee.DEPARTMENT_ID = entity.DEPARTMENT_ID;
+                editEmployee.JOB_ID = entity.JOB_ID;
+                editEmployee.MANAGER_ID = entity.MANAGER_ID;
+                context.SaveChanges();
+            }
+            catch
+            {
+                throw new Exception("Error UPDEMP");
+            }
         }     
         public int GetNextID()
         {

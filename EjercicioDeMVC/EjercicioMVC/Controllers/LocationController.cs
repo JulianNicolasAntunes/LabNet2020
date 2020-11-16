@@ -17,7 +17,8 @@ namespace EjercicioMVC.Controllers
         {
             var logic = new LocationsLogic();
             var locations = logic.GetAll();
-
+            if (TempData["Mensaje"] != null)
+                ViewData["Mensaje"] = TempData["Mensaje"].ToString();
             return View(locations);
 
         }
@@ -46,7 +47,11 @@ namespace EjercicioMVC.Controllers
             var locaEntity = logic.GetOne(location.ID);
             if (location.CITY != null)
                 locaEntity.CITY = location.CITY;
-            logic.Update(locaEntity);
+            try { logic.Update(locaEntity); }
+            catch (Exception exception)
+            {
+                TempData["Mensaje"] = "Error al actualizar una locacion." + exception.Message;
+            }
             return RedirectToAction("index");
         }
 
@@ -56,14 +61,22 @@ namespace EjercicioMVC.Controllers
             var logic = new LocationsLogic();
             var locationEntity = new LOCATIONS();
             locationEntity.CITY = loca.CITY;
-            logic.Insert(locationEntity);
+            try { logic.Insert(locationEntity); }
+            catch (Exception exception)
+            {
+                TempData["Mensaje"] = "Error al Insertar una locacion." + exception.Message;
+            }
             return Redirect("Index");
 
         }
         public ActionResult Delete(int id)
         {
-            var logic = new LocationsLogic();
-            logic.Delete(id);
+            var logic = new LocationsLogic();       
+            try { logic.Delete(id); }
+            catch (Exception exception)
+            {
+                TempData["Mensaje"] = "Error al eliminar una locacion." + exception.Message;
+            }
             return RedirectToAction("index");
         }
 

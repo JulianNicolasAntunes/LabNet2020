@@ -11,10 +11,18 @@ namespace EjercicioMVC.Logic
     {
         public void Delete(int entity)
         {
-            DEPARTMENTS deleteDepto = GetOne(entity);
-            context.DEPARTMENTS.Remove(deleteDepto);
-            context.SaveChanges();
+            try
+            {
+                DEPARTMENTS deleteDepto = GetOne(entity);
+                context.DEPARTMENTS.Remove(deleteDepto);
+                context.SaveChanges();
+            }
+            catch
+            {
+               
+                throw new Exception("Error DELDEP");
 
+            }
         }
 
         public List<DEPARTMENTS> GetAll()
@@ -35,12 +43,12 @@ namespace EjercicioMVC.Logic
                 entity.ID = GetNextID();
                 DEPARTMENTS depto = context.DEPARTMENTS.Add(entity);
                 context.SaveChanges();
-                return depto; 
-         
+                return depto;
+
             }
             catch
             {
-                throw new Exception("error");
+                throw new Exception("Error INSDEP");
             }
 
         }
@@ -54,11 +62,18 @@ namespace EjercicioMVC.Logic
         }
         public void Update(DEPARTMENTS entity)
         {
-            DEPARTMENTS editDeparment = GetOne(entity.ID);
-            editDeparment.DEPARTMENT_NAME = entity.DEPARTMENT_NAME;
-            editDeparment.DEPARTMENT_DESCRIPTION = entity.DEPARTMENT_DESCRIPTION;
-            editDeparment.LOCATION_ID = entity.LOCATION_ID;
-            context.SaveChanges();
-        }   
+            try
+            {
+                DEPARTMENTS editDeparment = GetOne(entity.ID);
+                editDeparment.DEPARTMENT_NAME = entity.DEPARTMENT_NAME;
+                editDeparment.DEPARTMENT_DESCRIPTION = entity.DEPARTMENT_DESCRIPTION;
+                editDeparment.LOCATION_ID = entity.LOCATION_ID;
+                context.SaveChanges();
+            }
+            catch
+            {
+                throw new Exception("Error UPDDEP");
+            }
+        }
     }
 }
