@@ -8,4 +8,5 @@ V2:{
     }
 V3:{
     +API CLIMA
+    +REPORT
     }
