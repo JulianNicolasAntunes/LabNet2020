@@ -1,5 +1,6 @@
 ﻿using EjercicioMVC.Entity;
 using EjercicioMVC.Logic;
+using Rotativa;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,6 +65,19 @@ namespace EjercicioMVC.Controllers
             var logic = new LocationsLogic();
             logic.Delete(id);
             return RedirectToAction("index");
+        }
+
+        public ActionResult Print()
+        {
+            return new ActionAsPdf("Report", new { nombre = "prueba" })
+            { FileName = "ReportLocations_.pdf" };
+        }
+        public ActionResult Report()
+        {
+            var logic = new LocationsLogic();
+            var locations = logic.GetAll();
+
+            return View(locations);
         }
     }
 }

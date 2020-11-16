@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Report";
+}
+
+<section class="call-to-action text-white text-center">
+    <div class="text-center ">
+        <h2>Report Employees </h2>
+        <h3> @DateTime.Now.Day /@DateTime.Now.Month /@DateTime.Now.Year </h3>
+    </div></section>
+
+<div class="btn-light blockquote text-center">
+    <br />
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-6 mx-auto">
+                <a class="btn btn-block btn-lg btn-outline-primary" href="@Url.Content("~/Employees/Print ")">Report</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <tr class="btn-primary">
+        <td></td>
+        <td>ID</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Salary</td>
+        <td>Department ID</td>
+        <td>Job ID</td>
+        <td>Hire date</td>
+        <td>Manager ID</td>
+    </tr>
+    @foreach (var emplo in Model)
+    {
+        <tr class="btn-light">
+            <td></td>
+            <td>@emplo.ID</td>
+            <td>@emplo.FIRST_NAME</td>
+            <td>@emplo.LAST_NAME</td>
+            <td>@emplo.SALARY</td>
+            <td>@emplo.DEPARTMENT_ID</td>
+            <td>@emplo.JOB_ID</td>
+            <td>@emplo.HIRE_DATE</td>
+            <td>@emplo.MANAGER_ID</td>
+        </tr>
+    }
+</table>

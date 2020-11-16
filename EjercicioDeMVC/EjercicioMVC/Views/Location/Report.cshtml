@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Report";
+}
+
+
+<section class="call-to-action text-white text-center">
+    <div class="text-center ">
+        <h2>Report Locations </h2>
+        <h3> @DateTime.Now.Day /@DateTime.Now.Month /@DateTime.Now.Year </h3>
+    </div>
+</section>
+
+<div class="btn-light blockquote text-center">
+    <br />
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-6 mx-auto">
+                <a class="btn btn-block btn-lg btn-outline-primary" href="@Url.Content("~/Location/Print ")">Report</a>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table">
+    <tr class="btn-primary">
+        <td></td>
+        <td>ID</td>
+        <td>City</td>
+        <td></td>
+    </tr>
+    @foreach (var local in Model)
+    {
+        <tr class="btn-light">
+            <td></td>
+            <td>@local.ID</td>
+            <td>@local.CITY</td>
+            <td></td>
+        </tr>
+    }
+</table>

@@ -1,5 +1,6 @@
 ﻿using EjercicioMVC.Entity;
 using EjercicioMVC.Logic;
+using Rotativa;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,7 +71,18 @@ namespace EjercicioMVC.Controllers
             return Redirect("Index");
 
         }
-  
+        public ActionResult Print()
+        {
+            return new ActionAsPdf("Report", new { nombre = "prueba" })
+            { FileName = "ReportDepartaments_.pdf" };
+        }
+        public ActionResult Report()
+        {
+            var logic = new DepartmentsLogic();
+            var deptos = logic.GetAll();
+            return View(deptos);
+        }
+
     }
 }
    
