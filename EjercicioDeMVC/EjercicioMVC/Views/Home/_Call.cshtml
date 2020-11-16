@@ -3,17 +3,15 @@
         <h5>Current Conditions in <span data-bind="text:name"></span></h5>
     </div>
     <div class="col-md-12">
-        Temperature is <span data-bind="text:main.temp"></span>&deg; C°
+       <h4> Temperature is <span data-bind="text:main.temp"></span>&deg; C</h4>
     </div>
     <script>
   var weather = Object();
             $(document).ready(function () {
                     $.get("@Url.Action("GetWeather", "Home")", function (response) {
-
                         console.log(response);
                         weather = ko.mapping.fromJS(response);
                         ko.applyBindings(weather);
-
                     });
             }); //se que esta mal que el script en el html, pero no se como poner Url.Action("GetWeather", "Home") en js"
     </script>
